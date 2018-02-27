@@ -12,15 +12,19 @@
   margin-top: 3%;
 }
 
-.new-tweet span.counter {
+.new-tweet .counter {
   float: right;
 }
 
-.new-tweet #tweetSubmit {
+.new-tweet .negativeNum {
+  color: red;
+}
+
+#tweetSubmit {
   margin-bottom: 3%;
 }
 
-.new-tweet #tweetSubmit textarea{
+#tweetSubmit textarea{
   width: 100%;
   padding: 2%;
 }
