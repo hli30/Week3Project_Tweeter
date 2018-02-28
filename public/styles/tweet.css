@@ -36,7 +36,6 @@
   margin: 10px;
   width: 50px;
   height: 50px;
-  /* opacity: 0.5; */
 }
 
 .tweet footer {
@@ -45,7 +44,7 @@
   overflow: auto;
 }
 
-.tweet .daysPassed {
+.tweet .daysCounter {
   float: left;
   margin: 10px;
   font-size: 0.8em;
