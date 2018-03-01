@@ -49,7 +49,6 @@ $(function () {
     const offSet = 150;
     const diffInSecs = ($.now() - time)/1000 - offSet;
 
-    // console.log(diffInSecs);
     const diffInMins = Math.floor(diffInSecs / minute);
     const diffInHrs = Math.floor(diffInSecs / hour);
     const diffInDays = Math.floor(diffInSecs / day);
@@ -103,8 +102,6 @@ $(function () {
     $(".counter").text("140");
   });
 
-  asyncGetAndRenderTweets();
-
   $(".composeButton").click(function(event) {
     const $textarea = $(".new-tweet textarea");
 
@@ -116,4 +113,6 @@ $(function () {
     });
     $(".composeButton").blur();
   });
+  
+  asyncGetAndRenderTweets();
 });
