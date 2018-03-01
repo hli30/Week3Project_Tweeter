@@ -21,3 +21,16 @@
   margin: 0 0 0 10px;
   line-height: 80px;
 }
+
+#nav-bar .composeButton {
+  float: right;
+  font-size: 2em;
+  background-color: teal;
+  padding: 5px;
+  margin: 15px;
+  border-radius: 10px;
+}
+
+#nav-bar .composeButton:hover {
+  background-color: white;
+}

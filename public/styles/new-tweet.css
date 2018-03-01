@@ -5,6 +5,7 @@
   padding: 0% 3%;
   background-color: #eee;
   border: 1px solid lightgray;
+  display: none;
 }
 
 .new-tweet h2 {

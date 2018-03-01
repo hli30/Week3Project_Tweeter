@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(function () {
   const $tweetSubmit = $("#tweetSubmit");
   const $counter = $tweetSubmit.find(".counter");
   const maxTweetLength = Number($counter.text());
