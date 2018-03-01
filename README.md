@@ -6,7 +6,7 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Final Product
 
-!["Screenshot of tweeter page"]()
+!["Screenshot of tweeter page"](https://github.com/hli30/Week3Project_Tweeter/blob/master/docs/tweeter-page.png)
 
 ## Dependencies
 
