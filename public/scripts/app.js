@@ -87,9 +87,9 @@ $(function () {
     $.get("/tweets", renderTweets);
   }
 
-  $("#tweetSubmit").on("submit", function(event) {
+  $("#tweetSubmit").submit(function(event) {
     event.preventDefault();
-    const validationError = validateForm($(this).find("textarea").val());
+    const validationError = validateForm($(this).find("textarea").val().length);
     if(validationError){
       alert(validationError);
       return;
@@ -107,12 +107,13 @@ $(function () {
 
     if($textarea.is(':visible')){
       $textarea.blur();
+      $textarea.val("");
     }
     $(".new-tweet").slideToggle("fast", () => {
       $textarea.select();
     });
     $(".composeButton").blur();
   });
-  
+
   asyncGetAndRenderTweets();
 });
