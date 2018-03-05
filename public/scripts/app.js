@@ -6,9 +6,12 @@
 
 $(function () {
   var $tweetsContainer = $('#tweetsContainer');
+
+  //Building the tweets container in the DOM
   function createTweetElement(tweetData) {
     const $tweet = $("<article>").addClass("tweet");
 
+    //Building the header
     const $header = $("<header>");
     const $avatar = $("<img>", {src: tweetData.user.avatars.regular}).addClass("avatar");
     const $nameTag = $("<h2>").text(tweetData.user.name);
@@ -18,8 +21,10 @@ $(function () {
       .append($nameTag)
       .append($handle);
     
+    //Building the body
     const $tweetBody = $("<div>").addClass("tweetBody").text(tweetData.content.text);
 
+    //Building the footer
     const $footer = $("<footer>")
     const $daysCounter = $("<span>").addClass("daysCounter").text(calculateAndFormatTimePassed(tweetData.created_at));
     const $menu = $("<ul>").addClass("menu");
@@ -41,6 +46,7 @@ $(function () {
     return $tweet;
   }
 
+  //Custom algo to calcualte time passed since tweet got posted
   function calculateAndFormatTimePassed(time) {
     const minute = 60;
     const hour = minute * 60;
@@ -75,7 +81,7 @@ $(function () {
   function validateForm (dataLength) {
     const maxTweetLength = 140;
     if (dataLength <= 0) {
-      return "Empty";
+      return "Tweet is empty!";
     }
     if (dataLength > maxTweetLength) {
       return "Exceeds Max Length";
@@ -105,14 +111,15 @@ $(function () {
   $(".composeButton").click(function(event) {
     const $textarea = $(".new-tweet textarea");
 
+    //focusing on textbox + scrolling to top depending on textbox's visibility
     if ($textarea.is(':visible')) {
       $textarea.blur();
       $textarea.val("");
     }
     $(".new-tweet").slideToggle("fast", () => {
       $textarea.select();
+      $(window).scrollTop(0);
     });
-    $(window).scrollTop(0);
     $(".composeButton").blur();
   });
 
