@@ -53,7 +53,7 @@ $(function () {
     const diffInHrs = Math.floor(diffInSecs / hour);
     const diffInDays = Math.floor(diffInSecs / day);
 
-    if(diffInSecs >= 0 && diffInSecs < minute || diffInSecs < 0) {
+    if (diffInSecs >= 0 && diffInSecs < minute || diffInSecs < 0) {
       return `Just Now`;
     } else if (diffInSecs >= minute && diffInSecs < hour ) {
       return `${diffInMins} minutes ago`;
@@ -74,10 +74,10 @@ $(function () {
 
   function validateForm (dataLength) {
     const maxTweetLength = 140;
-    if(dataLength <= 0) {
+    if (dataLength <= 0) {
       return "Empty";
     }
-    if(dataLength > maxTweetLength) {
+    if (dataLength > maxTweetLength) {
       return "Exceeds Max Length";
     }
     return false;
@@ -90,7 +90,7 @@ $(function () {
   $("#tweetSubmit").submit(function(event) {
     event.preventDefault();
     const validationError = validateForm($(this).find("textarea").val().length);
-    if(validationError){
+    if (validationError) {
       alert(validationError);
       return;
     } 
@@ -105,13 +105,14 @@ $(function () {
   $(".composeButton").click(function(event) {
     const $textarea = $(".new-tweet textarea");
 
-    if($textarea.is(':visible')){
+    if ($textarea.is(':visible')) {
       $textarea.blur();
       $textarea.val("");
     }
     $(".new-tweet").slideToggle("fast", () => {
       $textarea.select();
     });
+    $(window).scrollTop(0);
     $(".composeButton").blur();
   });
 

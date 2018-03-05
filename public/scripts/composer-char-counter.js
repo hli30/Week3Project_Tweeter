@@ -6,9 +6,9 @@ $(function () {
   $("#tweetSubmit textarea").keyup(function() {
     let count = $(this).val().length;
     $counter.text(maxTweetLength - count);
-    if($counter.text() < 0) {
+    if ($counter.text() < 0) {
       $counter.addClass("negativeNum");
-    }else {
+    } else {
       $counter.removeClass("negativeNum");
     }
   });
